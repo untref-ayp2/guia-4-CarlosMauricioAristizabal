@@ -5,5 +5,10 @@ import (
 )
 
 func Interseccion[T comparable](conjuntos ...*set.Set[T]) *set.Set[T] {
-	panic("Not implemented")
+	//var interseccion []T
+	interseccion := conjuntos[0]
+	for i := range conjuntos {
+		interseccion = set.Intersection(conjuntos[i], interseccion)
+	}
+	return interseccion
 }
